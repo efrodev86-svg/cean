@@ -1,0 +1,30 @@
+ID,Módulo,Submódulo,Descripción,Perfil,Prioridad,Dependencias,Rutas Laravel,Estado Diseño,Estado Desarrollo,Estado tablero,Fase,Estimación (sem),Inicio plan,Fin plan
+0,Infraestructura UI,Shell admin,"Sidebar modo oscuro nav Grupos identidad CEAN (prompt 0A)",Administración,Alta,,layouts/navigation,En progreso,Parcial,En curso,Fase 7,1,2026-06-03,2026-06-09
+0,Infraestructura UI,Shell docente,"Sidebar navy nav portal docente (prompt 0B)",Docente,Alta,0 admin,layouts/docente,Pendiente,Pendiente,Sin empezar,Fase 6,1,2026-09-19,2026-09-25
+0,Infraestructura UI,Shell alumno,"Sidebar drawer portal alumno Fase 2 (prompt 0C)",Alumno,Media,,layouts/alumno,Pendiente,Pendiente,Sin empezar,Fase 6,1,2026-10-07,2026-10-13
+1A,Acceso,Landing,"Dos entradas: alumno /boleta personal /login",Público,Media,0,/,Parcial,Hecho,Listo,Fase 7,0.5,2026-11-04,2026-11-07
+1C,Acceso,Login único personal,"Correo contraseña y Google OAuth admin y docente redirect por rol",Admin + Docente,Alta,,/login,Parcial,Parcial,En curso,Fase 2,1.5,2026-06-03,2026-06-13
+—,Transversal,Google OAuth,"Socialite dominio Workspace botón en login",Admin + Docente,Alta,1C,/login/auth/google,Pendiente,Parcial,En curso,Fase 2,1,2026-06-10,2026-06-16
+3,Catálogo académico,Licenciaturas y materias,"CRUD planes de estudio y asignaturas",Administración,Crítica,Ciclo activo,"admin/materias admin/carreras",Pendiente,Parcial,En curso,Fase 2,2,2026-06-17,2026-06-30
+4,Docentes,Directorio,"Listado KPIs alta profesores (prompts 4A 4B)",Administración,Crítica,3,admin/docentes,Pendiente,Pendiente,Sin empezar,Fase 2,2,2026-07-01,2026-07-14
+4C-A,Grupos escolares,Listado grupos,"Grupos 2°-A 2°-B con alumnos y materias",Administración,Crítica,"3 4",admin/grupos,Pendiente,Pendiente,Sin empezar,Fase 3,1,2026-07-15,2026-07-21
+4C-B,Grupos escolares,Crear editar grupo,"Semestre salón licenciatura ciclo",Administración,Crítica,4C-A,admin/grupos/create,Pendiente,Pendiente,Sin empezar,Fase 3,1,2026-07-22,2026-07-28
+4C-C,Grupos escolares,Asignaciones,"Materia docente titular por grupo",Administración,Crítica,4C-B,admin/grupos/asignaciones,Pendiente,Pendiente,Sin empezar,Fase 3,2,2026-07-29,2026-08-11
+4C-D,Grupos escolares,Detalle grupo,"Resumen materias-docentes alumnos",Administración,Alta,4C-C,admin/grupos/{id},Pendiente,Pendiente,Sin empezar,Fase 3,1,2026-08-12,2026-08-18
+2,Alumnos,Listado y CRUD,"Inscribir alumno en grupo existente expediente (2A 2B 2C)",Administración,Crítica,4C,admin/alumnos,En progreso,Pendiente,En curso,Fase 4,2,2026-08-19,2026-09-01
+5A,Calificaciones,Dashboard,"KPIs acciones rápidas ciclo activo",Administración,Media,,admin/dashboard,En progreso,Hecho,Listo,Fase 1,0,2026-06-03,2026-06-03
+5B,Calificaciones,Import CSV,"Carga masiva por semestre grupo",Administración,Alta,"2 4C",admin/calificaciones,Parcial,Hecho,Listo,Fase 1,0.5,2026-05-27,2026-06-02
+5C,Calificaciones,Ciclos escolares,"Activar ciclos fechas emisión boletas",Administración,Alta,,admin/ciclos,Pendiente,Parcial,En curso,Fase 2,1.5,2026-06-10,2026-06-20
+5D,Calificaciones,Acta editable,"Matriz grupo materia publicar oficial",Administración,Alta,"4C 2",admin/calificaciones/acta,Pendiente,Pendiente,Sin empezar,Fase 5,3,2026-09-02,2026-09-22
+6A,Portal alumno,Consulta boleta pública,"Matrícula fecha nacimiento sin login",Público,Alta,5,/boleta,Parcial,Hecho,Listo,Fase 1,0,2026-05-27,2026-06-02
+6B,Portal alumno,Boleta oficial,"Vista imprimible A4 semestre-grupo",Alumno,Alta,5,boleta/mostrar,Parcial,Hecho,Listo,Fase 1,0,2026-05-27,2026-06-02
+6C,Portal alumno,Portal con sesión,"Sidebar kardex timeline semestres",Alumno,Media,"2 5",alumno/*,Pendiente,Pendiente,Sin empezar,Fase 6,3,2026-10-14,2026-11-03
+6D,Portal alumno,Mi perfil,"Datos readonly grupo escolar",Alumno,Baja,6C,alumno/perfil,Pendiente,Pendiente,Sin empezar,Fase 6,0.5,2026-11-04,2026-11-07
+7A,Portal docente,Mis materias,"Tarjetas grupo materia asignados",Docente,Alta,"4C 1C",docente/dashboard,Pendiente,Parcial,En curso,Fase 6,1.5,2026-09-26,2026-10-06
+7B,Portal docente,Lista alumnos,"Alumnos grupo materia solo lectura",Docente,Alta,7A,docente/alumnos,Pendiente,Pendiente,Sin empezar,Fase 6,1,2026-10-07,2026-10-13
+7C,Portal docente,Captura calificaciones,"Borrador por grupo enviar a control escolar",Docente,Alta,"7A 4C",docente/calificaciones,Pendiente,Pendiente,Sin empezar,Fase 5,2.5,2026-09-02,2026-09-18
+7D,Portal docente,Mi perfil,"Teléfono editable asignaciones readonly",Docente,Baja,7A,docente/perfil,Pendiente,Pendiente,Sin empezar,Fase 6,0.5,2026-10-14,2026-10-17
+—,Transversal,Roles y permisos,"Middleware admin docente redirect post-login",Todos,Crítica,"1C 4",,—,Parcial,En curso,Fase 2,2,2026-06-10,2026-06-23
+—,Transversal,Rediseño UI CEAN,"Aplicar DESIGN.md sidebar oscuro a vistas",Todos,Media,0,,En progreso,Pendiente,En curso,Fase 7,2,2026-06-03,2026-06-16
+—,Transversal,Export PDF boleta,"Descarga oficial desde web",Alumno,Media,6B,,Pendiente,Pendiente,Sin empezar,Fase 7,1.5,2026-11-08,2026-11-18
+—,Transversal,Pruebas y despliegue,"Tests migraciones prod capacitación",Todos,Alta,Por fase,,—,Parcial,En curso,Fase 7,2,2026-11-19,2026-12-02

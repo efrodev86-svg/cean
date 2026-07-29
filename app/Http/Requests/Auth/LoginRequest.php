@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Models\User;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
@@ -47,6 +48,24 @@ class LoginRequest extends FormRequest
 
             throw ValidationException::withMessages([
                 'email' => trans('auth.failed'),
+            ]);
+        }
+
+        $user = Auth::user();
+
+        if ($user && $user->role === User::ROLE_DOCENTE && ! $user->docenteEstaActivo()) {
+            Auth::logout();
+
+            throw ValidationException::withMessages([
+                'email' => 'Tu cuenta de docente está deshabilitada. Contacta a control escolar.',
+            ]);
+        }
+
+        if ($user && $user->isAlumno() && ! $user->alumnoEstaActivo()) {
+            Auth::logout();
+
+            throw ValidationException::withMessages([
+                'email' => 'Tu cuenta de alumno está deshabilitada. Contacta a control escolar.',
             ]);
         }
 

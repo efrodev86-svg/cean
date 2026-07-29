@@ -12,7 +12,24 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Montserrat', 'Figtree', ...defaultTheme.fontFamily.sans],
+                mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
+            },
+            colors: {
+                cean: {
+                    cyan: '#59C1E3',
+                    navy: '#2C5EAB',
+                    'navy-hover': '#245099',
+                    orange: '#F18F35',
+                    red: '#C82D31',
+                    soft: '#E8F6FB',
+                },
+            },
+            backgroundImage: {
+                'cean-dots': 'radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px)',
+            },
+            backgroundSize: {
+                'cean-dots': '22px 22px',
             },
         },
     },

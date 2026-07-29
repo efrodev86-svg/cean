@@ -14,7 +14,7 @@ class CalificacionImportService
     /**
      * @return array{importadas: int, errores: list<string>}
      */
-    public function importFromCsv(UploadedFile $archivo, int $bimestre, CicloEscolar $ciclo): array
+    public function importFromCsv(UploadedFile $archivo, int $semestre, CicloEscolar $ciclo): array
     {
         $importadas = 0;
         $errores = [];
@@ -53,7 +53,7 @@ class CalificacionImportService
                 continue;
             }
 
-            [$matricula, $materiaNombre, $calificacion, $faltas] = array_pad($fila, 4, null);
+            [$matricula, $materiaNombre, $calificacion, $asistencia] = array_pad($fila, 4, null);
             $matricula = trim((string) $matricula);
             $materiaNombre = trim((string) $materiaNombre);
 
@@ -74,21 +74,27 @@ class CalificacionImportService
                 continue;
             }
 
+            if ($asistencia !== null && $asistencia !== '' && (! is_numeric($asistencia) || $asistencia < 0 || $asistencia > 100)) {
+                $errores[] = "Línea {$linea}: porcentaje de asistencia inválido (0-100).";
+
+                continue;
+            }
+
             $materia = Materia::query()->firstOrCreate(
                 ['nombre' => $materiaNombre],
-                ['grado' => $alumno->grado]
+                ['grado' => (string) $alumno->semestre]
             );
 
-            DB::transaction(function () use ($alumno, $materia, $bimestre, $calificacion, $faltas, &$importadas): void {
+            DB::transaction(function () use ($alumno, $materia, $semestre, $calificacion, $asistencia, &$importadas): void {
                 Calificacion::query()->updateOrCreate(
                     [
                         'alumno_id' => $alumno->id,
                         'materia_id' => $materia->id,
-                        'bimestre' => $bimestre,
+                        'semestre' => $semestre,
                     ],
                     [
                         'calificacion' => round((float) $calificacion, 1),
-                        'faltas' => is_numeric($faltas) ? (int) $faltas : 0,
+                        'asistencia_porcentaje' => is_numeric($asistencia) ? (int) $asistencia : 100,
                     ]
                 );
 

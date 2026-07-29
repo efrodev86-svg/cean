@@ -12,9 +12,9 @@ class Calificacion extends Model
     protected $fillable = [
         'alumno_id',
         'materia_id',
-        'bimestre',
+        'semestre',
         'calificacion',
-        'faltas',
+        'asistencia_porcentaje',
         'observaciones',
     ];
 
@@ -22,8 +22,8 @@ class Calificacion extends Model
     {
         return [
             'calificacion' => 'decimal:1',
-            'bimestre' => 'integer',
-            'faltas' => 'integer',
+            'semestre' => 'integer',
+            'asistencia_porcentaje' => 'integer',
         ];
     }
 

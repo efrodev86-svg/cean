@@ -3,71 +3,138 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Boleta — {{ config('app.name') }}</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <title>Boleta — {{ $alumno->matricula }}</title>
+    <link rel="stylesheet" href="{{ asset('css/boleta.css') }}">
 </head>
-<body class="bg-gray-100 font-sans text-gray-900 antialiased">
-    <div class="mx-auto max-w-4xl px-4 py-8">
-        <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
-            <div>
-                <h1 class="text-2xl font-bold">Boleta de calificaciones</h1>
-                <p class="text-sm text-gray-600">{{ config('app.name') }} — {{ $ciclo->nombre }}</p>
-            </div>
-            <button onclick="window.print()" class="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500">
-                Imprimir
-            </button>
-        </div>
-
-        <div class="mb-6 rounded-lg bg-white p-6 shadow">
-            <dl class="grid gap-2 sm:grid-cols-2">
-                <div>
-                    <dt class="text-xs uppercase text-gray-500">Alumno</dt>
-                    <dd class="font-semibold">{{ $alumno->nombreCompleto() }}</dd>
-                </div>
-                <div>
-                    <dt class="text-xs uppercase text-gray-500">Matrícula</dt>
-                    <dd>{{ $alumno->matricula }}</dd>
-                </div>
-                <div>
-                    <dt class="text-xs uppercase text-gray-500">Grado y grupo</dt>
-                    <dd>{{ $alumno->grado }} — Grupo {{ $alumno->grupo }}</dd>
-                </div>
-            </dl>
-        </div>
-
-        @forelse ($calificacionesPorBimestre as $bimestre => $calificaciones)
-            <div class="mb-6 overflow-hidden rounded-lg bg-white shadow">
-                <div class="border-b bg-indigo-50 px-6 py-3">
-                    <h2 class="font-semibold text-indigo-900">{{ $bimestre }}° Bimestre</h2>
-                </div>
-                <table class="min-w-full divide-y divide-gray-200 text-sm">
-                    <thead class="bg-gray-50">
-                        <tr>
-                            <th class="px-6 py-3 text-left font-medium text-gray-500">Materia</th>
-                            <th class="px-6 py-3 text-center font-medium text-gray-500">Calificación</th>
-                            <th class="px-6 py-3 text-center font-medium text-gray-500">Faltas</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        @foreach ($calificaciones as $calificacion)
-                            <tr>
-                                <td class="px-6 py-3">{{ $calificacion->materia->nombre }}</td>
-                                <td class="px-6 py-3 text-center font-semibold">{{ number_format($calificacion->calificacion, 1) }}</td>
-                                <td class="px-6 py-3 text-center">{{ $calificacion->faltas }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        @empty
-            <div class="rounded-lg bg-white p-6 text-center text-gray-600 shadow">
-                Aún no hay calificaciones publicadas para este ciclo.
-            </div>
-        @endforelse
-
-        <p class="text-center text-sm">
-            <a href="{{ route('boleta.index') }}" class="text-indigo-600 hover:text-indigo-500">Nueva consulta</a>
-        </p>
+<body class="boleta-body">
+    <div class="boleta-toolbar no-print">
+        <button type="button" onclick="window.print()">Imprimir boleta</button>
+        <a href="{{ route('boleta.index') }}">Nueva consulta</a>
     </div>
+
+    @php
+        $sede = $sede ?? null;
+        $bannerGobierno = config('boleta.banner_gobierno');
+        $logoEnsq = $sede?->logo ?: config('boleta.logo_ensq');
+        $escuelaBoleta = $sede?->escuela ?: config('boleta.escuela');
+        $directorBoleta = $sede?->director ?: config('boleta.director');
+        $tieneBanner = $bannerGobierno && file_exists(public_path($bannerGobierno));
+        $tieneLogoEnsq = $logoEnsq && file_exists(public_path($logoEnsq));
+    @endphp
+
+    <article class="boleta-pagina">
+        {{-- Logos: Secretaría (izq.) · ENSQ (der.) --}}
+        <div class="boleta-logos">
+            <div class="boleta-logos-izq">
+                @if ($tieneBanner)
+                    <img src="{{ asset($bannerGobierno) }}" alt="Secretaría de Educación — Querétaro">
+                @endif
+            </div>
+            <div class="boleta-logos-der">
+                @if ($tieneLogoEnsq)
+                    <img src="{{ asset($logoEnsq) }}" alt="ENSQ">
+                @endif
+            </div>
+        </div>
+
+        {{-- Encabezado --}}
+        <header class="boleta-titulos">
+            <p class="boleta-escuela">{{ $escuelaBoleta }}</p>
+            <p class="boleta-doc-titulo">Boleta de calificaciones</p>
+            <p class="boleta-doc-subtitulo">Control escolar</p>
+            <p class="boleta-sistema">{{ config('boleta.sistema_educativo') }}, certifica que el (la) c.</p>
+        </header>
+
+        {{-- Nombre entre líneas --}}
+        <div class="boleta-nombre-bloque">
+            <hr class="linea">
+            <p class="boleta-nombre-alumno">{{ $alumno->nombreFormal() }}</p>
+            <hr class="linea">
+        </div>
+
+        {{-- Párrafo académico --}}
+        <p class="boleta-parrafo-academico">
+            Cursó y acreditó las asignaturas del
+            <strong>semestre {{ $alumno->semestreParImpar() }}</strong>,
+            correspondiente al plan de estudios de la
+            <strong>{{ config('boleta.licenciatura') }} {{ mb_strtoupper($alumno->licenciatura) }}</strong>,
+            con las calificaciones finales que se anotan a continuación:
+        </p>
+
+        {{-- Matrícula · Semestre-grupo --}}
+        <div class="boleta-datos-grid">
+            <div class="boleta-campo">
+                <span class="etiqueta">Matrícula:</span>
+                <span class="valor">{{ $alumno->matricula }}</span>
+            </div>
+            <div class="boleta-campo">
+                <span class="etiqueta">Semestre- grupo:</span>
+                <span class="valor">{{ $alumno->semestreGrupo() }}</span>
+            </div>
+        </div>
+
+        {{-- Tabla de calificaciones --}}
+        @if ($calificaciones->isNotEmpty())
+            <table class="boleta-tabla-calificaciones">
+                <thead>
+                    <tr>
+                        <th class="col-materia">Materia</th>
+                        <th class="col-ciclo">Ciclo</th>
+                        <th class="col-calif">Calif.</th>
+                        <th class="col-letra">Letra</th>
+                        <th class="col-asistencia">% de asistencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($calificaciones as $calificacion)
+                        <tr>
+                            <td class="celda-materia">{{ $calificacion->materia->nombre }}</td>
+                            <td>{{ $ciclo->nombre }}</td>
+                            <td>
+                                {{ number_format($calificacion->calificacion, $calificacion->calificacion == (int) $calificacion->calificacion ? 0 : 1) }}
+                            </td>
+                            <td>{{ \App\Support\CalificacionEnLetra::entero($calificacion->calificacion) }}</td>
+                            <td>{{ $calificacion->asistencia_porcentaje }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+                @if ($promedio !== null)
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" class="celda-promedio-etiqueta">Promedio :</td>
+                            <td class="celda-promedio-num">{{ number_format($promedio, 1) }}</td>
+                            <td colspan="2" class="celda-promedio-letra">{{ $promedioLetra }}</td>
+                        </tr>
+                    </tfoot>
+                @endif
+            </table>
+        @else
+            <p class="boleta-sin-calificaciones">No hay calificaciones publicadas para este semestre.</p>
+        @endif
+
+        {{-- Texto legal --}}
+        <p class="boleta-legal">
+            La escala de calificaciones es de 0 al {{ config('boleta.calificacion_maxima') }};
+            la mínima aprobatoria es de {{ config('boleta.calificacion_minima') }}.
+            Este documento ampara las asignaturas del plan de estudios en vigor.
+            En cumplimiento de las prescripciones legales se extiende el presente en la ciudad de
+            <span class="boleta-legal-fecha">{{ $fechaDestacada }}</span>
+        </p>
+
+        {{-- Firma director --}}
+        <div class="boleta-pie-firmas">
+            <div class="boleta-firma-director">
+                <div class="boleta-firma-espacio" aria-hidden="true"></div>
+                <div class="boleta-firma-linea"></div>
+                <p class="boleta-firma-nombre">{{ $directorBoleta }}</p>
+                <p class="boleta-firma-cargo">Director</p>
+            </div>
+        </div>
+
+        <div class="boleta-codigo">
+            {{ config('boleta.codigo_formulario') }}<br>
+            Versión {{ config('boleta.version_formulario') }}
+        </div>
+    </article>
 </body>
 </html>

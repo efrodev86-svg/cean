@@ -1,6 +1,8 @@
-# CEAN — Control Escolar
+# CEAN — Control Escolar y Administración Normalista
 
-Sistema web para administración escolar (Fase 1):
+Sistema web para la **Escuela Normal Superior de Querétaro (ENSQ)**. CEAN significa *Control Escolar y Administración Normalista*.
+
+Fase 1:
 
 - **Alumnos:** consulta de boletas con matrícula + fecha de nacimiento
 - **Control escolar:** carga masiva de calificaciones vía CSV
@@ -29,13 +31,35 @@ npm install && npm run build
 | Rol | Email | Contraseña |
 |-----|-------|------------|
 | Control escolar | `control@escuela.test` | `password` |
+| Docente | `docente@escuela.test` | `password` |
 
 ### Alumnos de prueba
 
-| Matrícula | Fecha nacimiento |
-|-----------|------------------|
-| `2025001` | 2005-01-01 |
-| `2025002` | 2005-02-15 |
+| Matrícula | Fecha nacimiento | Notas |
+|-----------|------------------|-------|
+| `201559590000` | 2000-01-15 | Ejemplo del PDF oficial (8° semestre par) |
+| `2025001` | 2005-01-01 | Demo con 3 materias |
+
+## Inicio de sesión con Google (personal)
+
+En `/login`, el botón **Continuar con Google** usa Laravel Socialite. Solo entran usuarios ya registrados en CEAN con correo del dominio institucional.
+
+### 1. Credenciales en Google Cloud
+
+1. [Google Cloud Console](https://console.cloud.google.com/) → APIs y servicios → **Credenciales** → Crear **ID de cliente OAuth** (aplicación web).
+2. **URI de redirección autorizada:** debe coincidir con `GOOGLE_REDIRECT_URI` (por defecto `{APP_URL}/auth/google/callback`, p. ej. `http://cean.test/auth/google/callback` en Herd).
+3. Copia **Client ID** y **Client secret** al `.env`:
+
+```env
+GOOGLE_CLIENT_ID=tu-client-id.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=tu-secret
+GOOGLE_REDIRECT_URI="${APP_URL}/auth/google/callback"
+GOOGLE_ALLOWED_DOMAIN=ensq.edu.mx
+```
+
+4. El correo del usuario en la tabla `users` debe existir y coincidir con su cuenta de Google (p. ej. `control@escuela.test` en desarrollo; en producción, correos `@ensq.edu.mx` dados de alta por control escolar).
+
+Tras cambiar `.env`, ejecuta `php artisan config:clear` si usas caché de configuración.
 
 ## Rutas principales
 
@@ -45,20 +69,30 @@ npm install && npm run build
 | `/boleta` | Consulta de boleta (público) |
 | `/login` | Acceso personal escolar |
 | `/admin/dashboard` | Panel de control escolar |
+| `/admin/materias` | Catálogo de licenciaturas y materias del plan |
 | `/admin/calificaciones` | Importar calificaciones CSV |
 
 ## Formato CSV para calificaciones
 
 ```csv
-matricula,materia,calificacion,faltas
-2025001,Matemáticas,9.0,2
-2025001,Español,8.5,0
-2025002,Matemáticas,7.8,1
+matricula,materia,calificacion,asistencia
+201559590000,APRENDIZAJE EN EL SERVICIO,9,95
 ```
 
-- `faltas` es opcional (default 0)
+- `asistencia` es el porcentaje (0-100), opcional (default 100)
 - La primera fila puede ser encabezado
-- Selecciona el bimestre antes de importar
+- Selecciona el semestre antes de importar
+
+## Configuración de la boleta (`.env`)
+
+```env
+BOLETA_ESCUELA="ESCUELA NORMAL SUPERIOR DE QUERÉTARO"
+BOLETA_DIRECTOR="MTRO. ROBERTO COMPEÁN MARTÍNEZ"
+BOLETA_CIUDAD="SANTIAGO DE QUERÉTARO, QRO."
+BOLETA_LICENCIATURA="LICENCIATURA EN ENSEÑANZA Y APRENDIZAJE EN"
+BOLETA_CODIGO="FM.ENCE.14"
+BOLETA_VERSION="00"
+```
 
 ## Despliegue en hosting compartido
 

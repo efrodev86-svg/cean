@@ -16,8 +16,11 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
+        $user = $request->user();
+        $user->loadMissing('alumno');
+
         return view('profile.edit', [
-            'user' => $request->user(),
+            'user' => $user,
         ]);
     }
 
@@ -26,6 +29,8 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
+        abort_if($request->user()->soloPuedeCambiarPasswordEnPerfil(), 403);
+
         $request->user()->fill($request->validated());
 
         if ($request->user()->isDirty('email')) {
@@ -42,6 +47,8 @@ class ProfileController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
+        abort_if($request->user()->soloPuedeCambiarPasswordEnPerfil(), 403);
+
         $request->validateWithBag('userDeletion', [
             'password' => ['required', 'current_password'],
         ]);

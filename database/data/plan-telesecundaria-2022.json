@@ -1,0 +1,496 @@
+{
+  "licenciatura": {
+    "nombre_corto": "TELESECUNDARIA",
+    "nombre": "Licenciatura en Enseñanza y Aprendizaje en Telesecundaria",
+    "plan_nombre": "PLAN DE ESTUDIO DE LA LICENCIATURA EN ENSEÑANZA Y APRENDIZAJE EN TELESECUNDARIA",
+    "anio_plan": 2022
+  },
+  "materias": [
+    {
+      "semestre": 1,
+      "orden": 1,
+      "nombre": "MARCO FILOSÓFICO, LEGAL Y ORGANIZATIVO DEL SISTEMA EDUCATIVO MEXICANO",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22101"
+    },
+    {
+      "semestre": 1,
+      "orden": 2,
+      "nombre": "TELESECUNDARIA EN MÉXICO: DESAFÍOS PARA LA IGUALDAD Y LA INCLUSIÓN",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22102"
+    },
+    {
+      "semestre": 1,
+      "orden": 3,
+      "nombre": "ADOLESCENCIA. CRECIMIENTO Y COMPORTAMIENTO",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22103"
+    },
+    {
+      "semestre": 1,
+      "orden": 4,
+      "nombre": "HERRAMIENTAS PARA LA OBSERVACIÓN Y ANÁLISIS DE PRÁCTICAS Y CONTEXTOS ESCOLARES",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "ST22104"
+    },
+    {
+      "semestre": 1,
+      "orden": 5,
+      "nombre": "PROPÓSITOS, CONTENIDOS Y ENFOQUES PARA LA PLANEACIÓN EN TELESECUNDARIA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22105"
+    },
+    {
+      "semestre": 1,
+      "orden": 6,
+      "nombre": "HABILIDADES PROFESIONALES PARA LA DOCENCIA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22106"
+    },
+    {
+      "semestre": 1,
+      "orden": 7,
+      "nombre": "INGLÉS. COMUNICACIÓN BÁSICA Y PRINCIPIOS DIDÁCTICOS",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22107"
+    },
+    {
+      "semestre": 1,
+      "orden": 8,
+      "nombre": "SABERES DIGITALES PARA UNA DOCENCIA HÍBRIDA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22108"
+    },
+    {
+      "semestre": 2,
+      "orden": 1,
+      "nombre": "DESIGUALDADES: EDUCATIVA, SOCIOECONÓMICA Y POLÍTICA DE MÉXICO",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22201"
+    },
+    {
+      "semestre": 2,
+      "orden": 2,
+      "nombre": "INTRODUCCIÓN A LA ENSEÑANZA EN LA ESCUELA TELESECUNDARIA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22202"
+    },
+    {
+      "semestre": 2,
+      "orden": 3,
+      "nombre": "ADOLESCENCIA. EMOCIÓN Y CONVIVENCIA SANA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22203"
+    },
+    {
+      "semestre": 2,
+      "orden": 4,
+      "nombre": "OBSERVACIÓN Y ANÁLISIS DE PRÁCTICAS Y CONTEXTOS ESCOLARES",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "ST22204"
+    },
+    {
+      "semestre": 2,
+      "orden": 5,
+      "nombre": "PLANEACIÓN Y EVALUACIÓN",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "ST22205"
+    },
+    {
+      "semestre": 2,
+      "orden": 6,
+      "nombre": "DIDÁCTICA DEL ESPAÑOL: LENGUA MATERNA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22206"
+    },
+    {
+      "semestre": 2,
+      "orden": 7,
+      "nombre": "DIDÁCTICA DE LAS MATEMÁTICAS",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22207"
+    },
+    {
+      "semestre": 2,
+      "orden": 8,
+      "nombre": "INGLÉS. CONVERSACIONES ELEMENTALES Y PLANEACIÓN DIDÁCTICA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22208"
+    },
+    {
+      "semestre": 3,
+      "orden": 1,
+      "nombre": "NEUROCIENCIAS Y APRENDIZAJE",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22301"
+    },
+    {
+      "semestre": 3,
+      "orden": 2,
+      "nombre": "ADOLESCENCIA. PROCESOS COGNITIVOS",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22302"
+    },
+    {
+      "semestre": 3,
+      "orden": 3,
+      "nombre": "PRÁCTICA DOCENTE EN EL AULA",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "ST22303"
+    },
+    {
+      "semestre": 3,
+      "orden": 4,
+      "nombre": "DIDÁCTICA DE LA BIOLOGÍA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22304"
+    },
+    {
+      "semestre": 3,
+      "orden": 5,
+      "nombre": "ESPAÑOL Y PRÁCTICAS SOCIALES DEL LENGUAJE",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22305"
+    },
+    {
+      "semestre": 3,
+      "orden": 6,
+      "nombre": "MATEMÁTICAS Y RESOLUCIÓN DE PROBLEMAS",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22306"
+    },
+    {
+      "semestre": 3,
+      "orden": 7,
+      "nombre": "INGLÉS. INTERCAMBIO DE INFORMACIÓN E IDEAS Y PRÁCTICA DOCENTE",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22307"
+    },
+    {
+      "semestre": 3,
+      "orden": 8,
+      "nombre": "TECNOLOGÍA Y MODELOS DE APRENDIZAJE EMERGENTE",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22308"
+    },
+    {
+      "semestre": 4,
+      "orden": 1,
+      "nombre": "EDUCAR EN LA SOSTENIBILIDAD PARA UNA VIDA SALUDABLE",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22401"
+    },
+    {
+      "semestre": 4,
+      "orden": 2,
+      "nombre": "PENSAMIENTO PEDAGÓGICO",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22402"
+    },
+    {
+      "semestre": 4,
+      "orden": 3,
+      "nombre": "ADOLESCENCIA. ATENCIÓN A LA DIVERSIDAD Y SITUACIONES DE RIESGO",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22403"
+    },
+    {
+      "semestre": 4,
+      "orden": 4,
+      "nombre": "MEDIACIÓN PEDAGÓGICA Y TRABAJO DOCENTE",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "ST22404"
+    },
+    {
+      "semestre": 4,
+      "orden": 5,
+      "nombre": "DIDÁCTICA DE LA FÍSICA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22405"
+    },
+    {
+      "semestre": 4,
+      "orden": 6,
+      "nombre": "DIDÁCTICA DE LA FORMACIÓN CÍVICA Y ÉTICA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22406"
+    },
+    {
+      "semestre": 4,
+      "orden": 7,
+      "nombre": "DIDÁCTICA DE LA HISTORIA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22407"
+    },
+    {
+      "semestre": 4,
+      "orden": 8,
+      "nombre": "INGLÉS. FORTALECIMIENTO DE LA COMUNICACIÓN Y FUNDAMENTOS DE LA ENSEÑANZA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22408"
+    },
+    {
+      "semestre": 5,
+      "orden": 1,
+      "nombre": "EDUCACIÓN INCLUSIVA E INTERCULTURALIDAD CRÍTICA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22501"
+    },
+    {
+      "semestre": 5,
+      "orden": 2,
+      "nombre": "GESTIÓN DEL CENTRO EDUCATIVO",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22502"
+    },
+    {
+      "semestre": 5,
+      "orden": 3,
+      "nombre": "INNOVACIÓN PARA UNA DOCENCIA INCLUYENTE",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "ST22503"
+    },
+    {
+      "semestre": 5,
+      "orden": 4,
+      "nombre": "DIDÁCTICA DE LA GEOGRAFÍA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22504"
+    },
+    {
+      "semestre": 5,
+      "orden": 5,
+      "nombre": "DIDÁCTICA DE LA QUÍMICA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22505"
+    },
+    {
+      "semestre": 5,
+      "orden": 6,
+      "nombre": "PEDADOGÍA POR PROYECTOS",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22506"
+    },
+    {
+      "semestre": 5,
+      "orden": 7,
+      "nombre": "INGLÉS. NUEVAS PERSPECTIVAS GLOBALES Y ENFOQUE COMUNICATIVO",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22507"
+    },
+    {
+      "semestre": 5,
+      "orden": 8,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22508"
+    },
+    {
+      "semestre": 6,
+      "orden": 1,
+      "nombre": "INVESTIGACIÓN PARA LA DOCENCIA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22601"
+    },
+    {
+      "semestre": 6,
+      "orden": 2,
+      "nombre": "PROYECTO DE INTERVENCIÓN DOCENTE",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "ST22602"
+    },
+    {
+      "semestre": 6,
+      "orden": 3,
+      "nombre": "DIDÁCTICA DE LAS ARTES",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22603"
+    },
+    {
+      "semestre": 6,
+      "orden": 4,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22604"
+    },
+    {
+      "semestre": 6,
+      "orden": 5,
+      "nombre": "EDUCACIÓN FÍSICA PARA UNA VIDA SALUDABLE",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22605"
+    },
+    {
+      "semestre": 6,
+      "orden": 6,
+      "nombre": "LA ENSEÑANZA EN LA ESCUELA MULTIGRADO",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22606"
+    },
+    {
+      "semestre": 6,
+      "orden": 7,
+      "nombre": "INGLÉS. COMUNICACIÓN INDEPENDIENTE Y RECURSOS INTEGRALES",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22607"
+    },
+    {
+      "semestre": 6,
+      "orden": 8,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22608"
+    },
+    {
+      "semestre": 7,
+      "orden": 1,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22701"
+    },
+    {
+      "semestre": 7,
+      "orden": 2,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 9.0,
+      "horas_semana": 8.0,
+      "horas_semestre": 144.0,
+      "clave": "ST22702"
+    },
+    {
+      "semestre": 7,
+      "orden": 3,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 22.5,
+      "horas_semana": 20.0,
+      "horas_semestre": 360.0,
+      "clave": "ST22703"
+    },
+    {
+      "semestre": 8,
+      "orden": 1,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "ST22801"
+    },
+    {
+      "semestre": 8,
+      "orden": 2,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 11.25,
+      "horas_semana": 10.0,
+      "horas_semestre": 180.0,
+      "clave": "ST22802"
+    },
+    {
+      "semestre": 8,
+      "orden": 3,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 22.5,
+      "horas_semana": 20.0,
+      "horas_semestre": 360.0,
+      "clave": "ST22803"
+    }
+  ]
+}

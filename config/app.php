@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'CEAN — Control Escolar y Administración Normalista'),
 
     /*
     |--------------------------------------------------------------------------

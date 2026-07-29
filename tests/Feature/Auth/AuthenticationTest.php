@@ -15,6 +15,7 @@ class AuthenticationTest extends TestCase
         $response = $this->get('/login');
 
         $response->assertStatus(200);
+        $response->assertSee('Continuar con Google', false);
     }
 
     public function test_users_can_authenticate_using_the_login_screen(): void
@@ -28,6 +29,21 @@ class AuthenticationTest extends TestCase
 
         $this->assertAuthenticated();
         $response->assertRedirect(route('admin.dashboard', absolute: false));
+    }
+
+    public function test_docente_is_redirected_to_docente_dashboard(): void
+    {
+        $user = User::factory()->create([
+            'role' => 'docente',
+        ]);
+
+        $response = $this->post('/login', [
+            'email' => $user->email,
+            'password' => 'password',
+        ]);
+
+        $this->assertAuthenticated();
+        $response->assertRedirect(route('docente.dashboard', absolute: false));
     }
 
     public function test_users_can_not_authenticate_with_invalid_password(): void

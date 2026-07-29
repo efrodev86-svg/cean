@@ -8,7 +8,7 @@ class ImportarCalificacionesRequest extends FormRequest
 {
     public function authorize(): bool
     {
-        return $this->user()?->isAdmin() ?? false;
+        return $this->user()?->isControlEscolar() ?? false;
     }
 
     /**
@@ -17,7 +17,8 @@ class ImportarCalificacionesRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'bimestre' => ['required', 'integer', 'min:1', 'max:5'],
+            'sede_id' => ['nullable', 'integer', 'exists:sedes,id'],
+            'semestre' => ['required', 'integer', 'min:1', 'max:12'],
             'archivo' => ['required', 'file', 'mimes:csv,txt', 'max:2048'],
         ];
     }
@@ -28,7 +29,7 @@ class ImportarCalificacionesRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'bimestre.required' => 'Selecciona el bimestre.',
+            'semestre.required' => 'Selecciona el semestre.',
             'archivo.required' => 'Selecciona un archivo CSV.',
             'archivo.mimes' => 'El archivo debe ser CSV.',
         ];

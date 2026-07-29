@@ -11,7 +11,7 @@ class EnsureUserIsAdmin
     public function handle(Request $request, Closure $next): Response
     {
         if (! $request->user()?->isAdmin()) {
-            abort(403, 'Acceso restringido al personal de control escolar.');
+            abort(403, 'Acción reservada al administrador global.');
         }
 
         return $next($request);

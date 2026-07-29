@@ -1,3 +1,253 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+[x-cloak] {
+    display: none !important;
+}
+
+@layer components {
+    .btn-cean-primary {
+        @apply flex min-h-[44px] w-full items-center justify-center gap-2 rounded-lg bg-cean-navy px-4 py-3 text-sm font-semibold text-white transition hover:bg-cean-navy-hover focus:outline-none focus:ring-2 focus:ring-cean-cyan focus:ring-offset-2 focus:ring-offset-gray-800;
+    }
+
+    .btn-cean-outline {
+        @apply flex min-h-[44px] w-full items-center justify-center gap-2 rounded-lg border-2 border-cean-navy bg-transparent px-4 py-3 text-sm font-semibold text-cean-cyan transition hover:bg-cean-navy/20 focus:outline-none focus:ring-2 focus:ring-cean-cyan focus:ring-offset-2 focus:ring-offset-gray-800;
+    }
+
+    .landing-card {
+        @apply flex flex-col rounded-xl border border-gray-700 bg-gray-800/80 p-6 backdrop-blur-sm;
+    }
+
+    .landing-icon {
+        @apply mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-cean-navy/40 text-cean-cyan;
+    }
+
+    .login-title {
+        @apply text-2xl font-bold tracking-tight text-[#c5c7f2] sm:text-[1.65rem];
+    }
+
+    .login-subtitle {
+        @apply mt-2 text-sm leading-relaxed text-gray-400;
+    }
+
+    .login-hint {
+        @apply font-mono text-xs text-gray-500;
+    }
+
+    .btn-login-google {
+        @apply inline-flex min-h-[48px] w-full items-center justify-center gap-3 rounded-lg border border-gray-600 bg-white px-4 py-3 font-mono text-sm font-medium text-gray-900 shadow-sm transition hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-cean-cyan focus:ring-offset-2 focus:ring-offset-gray-800;
+    }
+
+    .login-divider {
+        @apply relative my-6;
+    }
+
+    .login-divider-line {
+        @apply absolute inset-0 flex items-center;
+    }
+
+    .login-divider-border {
+        @apply w-full border-t border-gray-600;
+    }
+
+    .login-divider-label {
+        @apply relative flex justify-center font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-gray-500;
+    }
+
+    .login-divider-label span {
+        @apply bg-gray-800 px-3;
+    }
+
+    .login-label {
+        @apply block font-mono text-xs font-medium text-gray-300;
+    }
+
+    .login-input-wrap {
+        @apply relative mt-1.5;
+    }
+
+    .login-input {
+        @apply block min-h-[44px] w-full rounded-lg border border-gray-600 bg-gray-900/90 py-2.5 pl-10 pr-10 font-mono text-sm text-gray-100 placeholder:text-gray-600 focus:border-cean-cyan focus:outline-none focus:ring-2 focus:ring-cean-cyan/40;
+    }
+
+    .login-input-icon {
+        @apply pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-500;
+    }
+
+    .login-input-toggle {
+        @apply absolute right-2 top-1/2 -translate-y-1/2 rounded p-1.5 text-gray-500 transition hover:text-cean-cyan focus:outline-none focus:ring-2 focus:ring-cean-cyan;
+    }
+
+    .login-checkbox {
+        @apply rounded border-gray-600 bg-gray-900 text-cean-navy focus:ring-cean-cyan focus:ring-offset-gray-800;
+    }
+
+    .login-link {
+        @apply font-mono text-xs text-[#c5c7f2] underline-offset-2 transition hover:text-cean-cyan hover:underline focus:outline-none focus:ring-2 focus:ring-cean-cyan focus:ring-offset-2 focus:ring-offset-gray-800 rounded;
+    }
+
+    .login-footer-link {
+        @apply inline-flex items-center justify-center gap-2 font-mono text-xs text-gray-400 transition hover:text-cean-cyan focus:outline-none focus:ring-2 focus:ring-cean-cyan focus:ring-offset-2 focus:ring-offset-gray-800 rounded px-1;
+    }
+
+    .login-alert {
+        @apply mb-4 rounded-lg border border-cean-red/40 bg-cean-red/10 px-4 py-3 font-mono text-sm text-red-200;
+    }
+
+    .login-alert-success {
+        @apply mb-4 rounded-lg border border-green-700/50 bg-green-900/30 px-4 py-3 font-mono text-sm text-green-200;
+    }
+
+    .guest-card {
+        @apply rounded-2xl border border-gray-700 bg-gray-800/90 p-6 shadow-xl backdrop-blur-sm;
+    }
+
+    .boleta-badge-public {
+        @apply inline-flex items-center gap-1.5 rounded-md bg-teal-900/40 px-2.5 py-1 font-mono text-[10px] font-medium uppercase tracking-wide text-cean-cyan;
+    }
+
+    .boleta-badge-ciclo {
+        @apply rounded border border-gray-600 px-2 py-0.5 font-mono text-[10px] text-gray-400;
+    }
+
+    .guest-card-divider {
+        @apply my-6 border-t border-gray-700/80;
+    }
+
+    .docente-nav-link {
+        @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-400 transition hover:bg-gray-800 hover:text-gray-200;
+    }
+
+    .docente-nav-link-active {
+        @apply bg-violet-600/90 text-white hover:bg-violet-600 hover:text-white;
+    }
+
+    .alumno-nav-link-active {
+        @apply bg-emerald-600/90 text-white hover:bg-emerald-600 hover:text-white;
+    }
+
+    .docente-panel {
+        @apply rounded-2xl border border-gray-800 bg-gray-900/80 p-6 sm:p-8;
+    }
+
+    .admin-nav-link {
+        @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-400 transition hover:bg-gray-800 hover:text-gray-200;
+    }
+
+    .admin-nav-link-active {
+        @apply bg-gray-800 text-white hover:bg-gray-800 hover:text-white;
+    }
+
+    .admin-sidebar {
+        @apply w-64 transition-[width] duration-200 ease-in-out lg:h-screen lg:max-h-screen;
+    }
+
+    .admin-sidebar-tooltip {
+        @apply pointer-events-none absolute left-full top-1/2 z-[60] ml-3 hidden -translate-y-1/2 whitespace-nowrap rounded-lg border border-gray-700 bg-gray-800 px-3 py-1.5 text-xs font-medium text-gray-100 opacity-0 shadow-xl transition-opacity duration-150;
+    }
+
+    @media (min-width: 1024px) {
+        .admin-sidebar--collapsed {
+            @apply w-[4.5rem] overflow-visible;
+        }
+
+        .admin-sidebar--collapsed .admin-sidebar-brand-text,
+        .admin-sidebar--collapsed .admin-sidebar-footer-text,
+        .admin-sidebar--collapsed .admin-nav-link-label {
+            @apply hidden;
+        }
+
+        .admin-sidebar--collapsed .admin-sidebar-header {
+            @apply flex-col justify-center gap-2 px-3 py-4;
+        }
+
+        .admin-sidebar--collapsed .admin-sidebar-header-inner {
+            @apply hidden;
+        }
+
+        .admin-sidebar--collapsed .admin-sidebar-toggle {
+            @apply mx-auto;
+        }
+
+        .admin-sidebar--collapsed nav {
+            @apply px-2;
+        }
+
+        .admin-sidebar--collapsed .admin-nav-link {
+            @apply justify-center px-2;
+        }
+
+        .admin-sidebar--collapsed .admin-sidebar-footer {
+            @apply px-2;
+        }
+
+        .admin-sidebar--collapsed .admin-sidebar-footer-profile {
+            @apply justify-center;
+        }
+
+        .admin-sidebar--collapsed .admin-user-menu {
+            @apply bottom-0 left-full mb-0 ml-3;
+        }
+
+        .admin-sidebar--collapsed .admin-sidebar-tooltip {
+            @apply block;
+        }
+
+        .admin-sidebar--collapsed .admin-nav-link:hover .admin-sidebar-tooltip {
+            @apply opacity-100;
+        }
+    }
+
+    .admin-panel {
+        @apply rounded-2xl border border-gray-800 bg-gray-900/80 p-6 sm:p-8;
+    }
+
+    .admin-alert-success {
+        @apply rounded-lg border border-green-700/50 bg-green-900/30 px-4 py-3 text-sm text-green-200;
+    }
+
+    .admin-alert-error {
+        @apply rounded-lg border border-cean-red/40 bg-cean-red/10 px-4 py-3 text-sm text-red-200;
+    }
+
+    .admin-alert-warning {
+        @apply rounded-lg border border-amber-700/50 bg-amber-900/30 px-4 py-3 text-sm text-amber-200;
+    }
+
+    .admin-form-label {
+        @apply block text-sm font-medium text-gray-300;
+    }
+
+    .admin-form-input {
+        @apply mt-1 block w-full rounded-lg border border-gray-700 bg-gray-800 px-3 py-2 text-sm text-gray-100 shadow-sm focus:border-cean-cyan focus:ring-cean-cyan;
+    }
+
+    .admin-modal {
+        @apply rounded-2xl border border-gray-700 bg-gray-900 p-6 shadow-2xl;
+    }
+
+    .licenciatura-card {
+        @apply overflow-hidden rounded-xl border border-gray-700 bg-gray-800/40 transition hover:border-gray-600 hover:bg-gray-800/70;
+    }
+
+    .licenciatura-card-active {
+        @apply border-cean-cyan/50 bg-gray-800/80 ring-1 ring-cean-cyan/30;
+    }
+
+    .materia-sortable-ghost {
+        @apply bg-cean-navy/20 opacity-60;
+    }
+
+    .materia-sortable-chosen {
+        @apply bg-gray-800/60;
+    }
+
+    .materia-sortable-drag {
+        @apply opacity-90;
+    }
+
+    .materia-sortable-pending {
+        @apply pointer-events-none opacity-70;
+    }
+}

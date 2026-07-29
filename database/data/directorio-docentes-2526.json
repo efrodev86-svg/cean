@@ -1,0 +1,407 @@
+[
+  {
+    "email": "aalonso@ensq.edu.mx",
+    "nombre": "Alberto",
+    "primer_apellido": "Alonso",
+    "segundo_apellido": "Partida",
+    "grado_abreviatura": "Mtro.",
+    "celular": "4425598513",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "TOSW960101HDFRRR06"
+  },
+  {
+    "email": "agonzalez@ensq.edu.mx",
+    "nombre": "Arandi Alejandra",
+    "primer_apellido": "González",
+    "segundo_apellido": "Arias",
+    "grado_abreviatura": "Lic.",
+    "celular": "4421116703",
+    "tipo_contratacion": "base",
+    "nombre_plaza": "Control Escolar",
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "VASD910101HDFRRR01"
+  },
+  {
+    "email": "avazquez@ensq.edu.mx",
+    "nombre": "Angélica Araceli",
+    "primer_apellido": "Vázquez",
+    "segundo_apellido": "Ricaño",
+    "grado_abreviatura": "Mtra.",
+    "celular": "4421273557",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "FBWD980101HDFRRR08"
+  },
+  {
+    "email": "bestrada@ensq.edu.mx",
+    "nombre": "Brenda",
+    "primer_apellido": "Estrada",
+    "segundo_apellido": "Trejo",
+    "grado_abreviatura": "Mtra.",
+    "celular": "4423228331",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "FETG940101HDFRRR04"
+  },
+  {
+    "email": "bgalicia@ensq.edu.mx",
+    "nombre": "Bernabé",
+    "primer_apellido": "Galicia",
+    "segundo_apellido": "Beltrán",
+    "grado_abreviatura": "Lic.",
+    "celular": "9991987578",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "UAVR960101HDFRRR06"
+  },
+  {
+    "email": "bmar123.bm@gmail.com",
+    "nombre": "Valeria",
+    "primer_apellido": "Palacios",
+    "segundo_apellido": "Solis",
+    "grado_abreviatura": "Lic.",
+    "celular": "4422026232",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "LIVB980101HDFRRR08"
+  },
+  {
+    "email": "cdejesus@ensq.edu.mx",
+    "nombre": "Cecilia Alejandra De",
+    "primer_apellido": "Jesús",
+    "segundo_apellido": "Martínez",
+    "grado_abreviatura": "Lic.",
+    "celular": "4426032033",
+    "tipo_contratacion": "base",
+    "nombre_plaza": "Aux. Dirección",
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "KGUQ900101HDFRRR00"
+  },
+  {
+    "email": "dave.safp@gmail.com",
+    "nombre": "David",
+    "primer_apellido": "Barush",
+    "segundo_apellido": "Sánchez",
+    "grado_abreviatura": "Mtro.",
+    "celular": "4423634725",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "XSYP950101HDFRRR05"
+  },
+  {
+    "email": "eestrada@ensq.edu.mx",
+    "nombre": "Evert",
+    "primer_apellido": "Estrada",
+    "segundo_apellido": "Sánchez",
+    "grado_abreviatura": "Dr.",
+    "celular": "4411219936",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "FJAM980101HDFRRR08"
+  },
+  {
+    "email": "gvillavicencio@ensq.edu.mx",
+    "nombre": "Gabriela Valeria",
+    "primer_apellido": "Villavicencio",
+    "segundo_apellido": "Valdez",
+    "grado_abreviatura": "Dr.",
+    "celular": "4423632125",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "VCKF920101HDFRRR02"
+  },
+  {
+    "email": "iaguilar@ensq.edu.mx",
+    "nombre": "Ixchel",
+    "primer_apellido": "Aguilar",
+    "segundo_apellido": "Rangel",
+    "grado_abreviatura": "Dr.",
+    "celular": "4423449127",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "FFTG940101HDFRRR04"
+  },
+  {
+    "email": "jbaez@ensq.edu.mx",
+    "nombre": "Jesús Alejandro",
+    "primer_apellido": "Báez",
+    "segundo_apellido": "Rodríguez",
+    "grado_abreviatura": "Mtro.",
+    "celular": "4421284372",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "AGER900101HDFRRR00"
+  },
+  {
+    "email": "jfigueroa@ensq.edu.mx",
+    "nombre": "Jannet Guadalupe",
+    "primer_apellido": "Figueroa",
+    "segundo_apellido": "Hidalgo",
+    "grado_abreviatura": "Mtra.",
+    "celular": "4423468477",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "GQDS910101HDFRRR01"
+  },
+  {
+    "email": "leopoldo.cabal.fcb@gmail.com",
+    "nombre": "Leopoldo Antonio",
+    "primer_apellido": "Vázquez",
+    "segundo_apellido": "Cabal",
+    "grado_abreviatura": "Mtro.",
+    "celular": "4621417635",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "NTUE970101HDFRRR07"
+  },
+  {
+    "email": "luis.pedrero.ojeda@gmail.com",
+    "nombre": "Luis",
+    "primer_apellido": "Pedrero",
+    "segundo_apellido": "Ojeda",
+    "grado_abreviatura": "Dr.",
+    "celular": "5554968139",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "EVVZ920101HDFRRR02"
+  },
+  {
+    "email": "lyliana.aguilar009@gmail.com",
+    "nombre": "Lyliana",
+    "primer_apellido": "Aguilar",
+    "segundo_apellido": "Cruz",
+    "grado_abreviatura": "Mtra.",
+    "celular": "4425255209",
+    "tipo_contratacion": "base",
+    "nombre_plaza": "Psicóloga",
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "ODLN910101HDFRRR01"
+  },
+  {
+    "email": "maria.nieto.cuevas1@gmail.com",
+    "nombre": "María Guadalupe",
+    "primer_apellido": "Nieto",
+    "segundo_apellido": "Cuevas",
+    "grado_abreviatura": "Dr.",
+    "celular": "5520874926",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "EQQM940101HDFRRR04"
+  },
+  {
+    "email": "marosa.hernandez7@gmail.com",
+    "nombre": "Ma. Rosa Gpe.",
+    "primer_apellido": "Hernández",
+    "segundo_apellido": "Mondragón",
+    "grado_abreviatura": "Dr.",
+    "celular": "4422391670",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "LFVP900101HDFRRR00"
+  },
+  {
+    "email": "mestrada@ensq.edu.mx",
+    "nombre": "María del Mar",
+    "primer_apellido": "Estrada",
+    "segundo_apellido": "Rebull",
+    "grado_abreviatura": "Dr.",
+    "celular": "5534035809",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "NONG930101HDFRRR03"
+  },
+  {
+    "email": "mfrias@ensq.edu.mx",
+    "nombre": "Martha Nictze-ha",
+    "primer_apellido": "Frías",
+    "segundo_apellido": "Lara",
+    "grado_abreviatura": "Mtra.",
+    "celular": "4422720803",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "EWQI990101HDFRRR09"
+  },
+  {
+    "email": "mlopez@ensq.edu.mx",
+    "nombre": "María Eugenia",
+    "primer_apellido": "López",
+    "segundo_apellido": "Peña",
+    "grado_abreviatura": "Mtra.",
+    "celular": "4421752786",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "PJZK970101HDFRRR07"
+  },
+  {
+    "email": "ncancino@ensq.edu.mx",
+    "nombre": "Nayely",
+    "primer_apellido": "Cancino",
+    "segundo_apellido": "Banderas",
+    "grado_abreviatura": "Mtra.",
+    "celular": "4423055423",
+    "tipo_contratacion": "base",
+    "nombre_plaza": "Subdirección académica",
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "CVDE930101HDFRRR03"
+  },
+  {
+    "email": "pmejia@ensq.edu.mx",
+    "nombre": "Paola",
+    "primer_apellido": "Mejía",
+    "segundo_apellido": "Donandres",
+    "grado_abreviatura": "Lic.",
+    "celular": "4424654887",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "PMFA970101HDFRRR07"
+  },
+  {
+    "email": "rgonzalez@ensq.edu.mx",
+    "nombre": "Rogelio",
+    "primer_apellido": "González",
+    "segundo_apellido": "Hernández",
+    "grado_abreviatura": "Ing.",
+    "celular": "4426646465",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "ESVL950101HDFRRR05"
+  },
+  {
+    "email": "saguirre@ensq.edu.mx",
+    "nombre": "Sandra Lorena",
+    "primer_apellido": "Aguirre",
+    "segundo_apellido": "López",
+    "grado_abreviatura": "Lic.",
+    "celular": "4423438182",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "RKGG960101HDFRRR06"
+  },
+  {
+    "email": "sgonzalez@ensq.edu.mx",
+    "nombre": "Susana Belem",
+    "primer_apellido": "González",
+    "segundo_apellido": "Chávez",
+    "grado_abreviatura": "Lic.",
+    "celular": "4428215917",
+    "tipo_contratacion": "base",
+    "nombre_plaza": "Coordinadora de la Unidad Tolimán",
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "PTKJ920101HDFRRR02"
+  },
+  {
+    "email": "victor.yaflo.21@gmail.com",
+    "nombre": "Victor",
+    "primer_apellido": "Yánez",
+    "segundo_apellido": "Flores",
+    "grado_abreviatura": "Mtro.",
+    "celular": "4424381990",
+    "tipo_contratacion": "base",
+    "nombre_plaza": null,
+    "seccion": "Docentes",
+    "sedes": [
+      "central"
+    ],
+    "curp": "WUJG930101HDFRRR03"
+  }
+]

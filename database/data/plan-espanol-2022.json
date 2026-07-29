@@ -1,0 +1,478 @@
+{
+  "licenciatura": {
+    "nombre_corto": "ESPAÑOL",
+    "nombre": "Licenciatura en Enseñanza y Aprendizaje del Español",
+    "plan_nombre": "PLAN DE ESTUDIO DE LA LICENCIATURA EN ENSEÑANZA Y APRENDIZAJE DEL ESPAÑOL",
+    "anio_plan": 2022
+  },
+  "materias": [
+    {
+      "semestre": 1,
+      "orden": 1,
+      "nombre": "BASES FILOSÓFICAS, LEGALES Y ORGANIZATIVAS DEL SISTEMA EDUCATIVO MEXICANO",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22101"
+    },
+    {
+      "semestre": 1,
+      "orden": 2,
+      "nombre": "FORMACIÓN E IDENTIDAD PROFESIONAL DOCENTE",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22102"
+    },
+    {
+      "semestre": 1,
+      "orden": 3,
+      "nombre": "PERSPECTIVAS TEÓRICAS SOBRE EL DESARROLLO DEL ADOLESCENTE",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22103"
+    },
+    {
+      "semestre": 1,
+      "orden": 4,
+      "nombre": "ACERCAMIENTO A PRÁCTICAS EDUCATIVAS Y COMUNITARIAS",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "SE22104"
+    },
+    {
+      "semestre": 1,
+      "orden": 5,
+      "nombre": "COMPRENSIÓN Y PRODUCCIÓN DE TEXTOS ACADÉMICOS",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22105"
+    },
+    {
+      "semestre": 1,
+      "orden": 6,
+      "nombre": "INTRODUCCIÓN A LA ENSEÑANZA DEL ESPAÑOL COMO LENGUA MATERNA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22106"
+    },
+    {
+      "semestre": 1,
+      "orden": 7,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22107"
+    },
+    {
+      "semestre": 1,
+      "orden": 8,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "SE22108"
+    },
+    {
+      "semestre": 2,
+      "orden": 1,
+      "nombre": "FUNDAMENTOS EPISTEMOLÓGICOS DE LA EDUCACIÓN",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22201"
+    },
+    {
+      "semestre": 2,
+      "orden": 2,
+      "nombre": "TEORÍAS Y MODELOS DEL APRENDIZAJE",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22202"
+    },
+    {
+      "semestre": 2,
+      "orden": 3,
+      "nombre": "ANÁLISIS DE PRÁCTICAS Y CONTEXTOS ESCOLARES",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "SE22203"
+    },
+    {
+      "semestre": 2,
+      "orden": 4,
+      "nombre": "TIPOLOGÍAS TEXTUALES",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22204"
+    },
+    {
+      "semestre": 2,
+      "orden": 5,
+      "nombre": "LINGÜÍSTICA GENERAL",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22205"
+    },
+    {
+      "semestre": 2,
+      "orden": 6,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22206"
+    },
+    {
+      "semestre": 2,
+      "orden": 7,
+      "nombre": "ENTORNOS VIRTUALES DE APRENDIZAJE PARA LA EDUCACIÓN HÍBRIDA. SU PEDAGOGÍA Y DIDÁCTICA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22207"
+    },
+    {
+      "semestre": 2,
+      "orden": 8,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "SE22208"
+    },
+    {
+      "semestre": 3,
+      "orden": 1,
+      "nombre": "HISTORIA DE LA EDUCACIÓN EN MÉXICO. RETOS ACTUALES",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22301"
+    },
+    {
+      "semestre": 3,
+      "orden": 2,
+      "nombre": "PLANEACIÓN DE LA ENSEÑANZA Y EVALUACIÓN DE LOS APRENDIZAJES",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "SE22302"
+    },
+    {
+      "semestre": 3,
+      "orden": 3,
+      "nombre": "INTERVENCIÓN DIDÁCTICO-PEDAGÓGICA Y TRABAJO DOCENTE",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "SE22303"
+    },
+    {
+      "semestre": 3,
+      "orden": 4,
+      "nombre": "MORFOSINTAXIS",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22304"
+    },
+    {
+      "semestre": 3,
+      "orden": 5,
+      "nombre": "INTRODUCCIÓN A LA LITERATURA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22305"
+    },
+    {
+      "semestre": 3,
+      "orden": 6,
+      "nombre": "DIDÁCTICA DE LA LENGUA Y LA LITERATURA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22306"
+    },
+    {
+      "semestre": 3,
+      "orden": 7,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22307"
+    },
+    {
+      "semestre": 3,
+      "orden": 8,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22308"
+    },
+    {
+      "semestre": 4,
+      "orden": 1,
+      "nombre": "DIVERSIDAD E INCLUSIÓN EDUCATIVA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22401"
+    },
+    {
+      "semestre": 4,
+      "orden": 2,
+      "nombre": "GESTIÓN ESCOLAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22402"
+    },
+    {
+      "semestre": 4,
+      "orden": 3,
+      "nombre": "ESTRATEGIAS DE TRABAJO DOCENTE Y SABERES PEDAGÓGICOS",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "SE22403"
+    },
+    {
+      "semestre": 4,
+      "orden": 4,
+      "nombre": "SEMÁNTICA Y PRAGMÁTICA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22404"
+    },
+    {
+      "semestre": 4,
+      "orden": 5,
+      "nombre": "LITERATURA UNIVERSAL",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22405"
+    },
+    {
+      "semestre": 4,
+      "orden": 6,
+      "nombre": "DIDÁCTICA DE LA ORALIDAD",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22406"
+    },
+    {
+      "semestre": 4,
+      "orden": 7,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "SE22407"
+    },
+    {
+      "semestre": 4,
+      "orden": 8,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22408"
+    },
+    {
+      "semestre": 5,
+      "orden": 1,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "SE22501"
+    },
+    {
+      "semestre": 5,
+      "orden": 2,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22502"
+    },
+    {
+      "semestre": 5,
+      "orden": 3,
+      "nombre": "INVESTIGACIÓN E INNOVACIÓN DE LA PRÁCTICA DOCENTE",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "SE22503"
+    },
+    {
+      "semestre": 5,
+      "orden": 4,
+      "nombre": "DIVERSIDAD LINGÜÍSTICA INTERCULTURAL",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22504"
+    },
+    {
+      "semestre": 5,
+      "orden": 5,
+      "nombre": "LITERATURA HISPANOAMERICANA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22505"
+    },
+    {
+      "semestre": 5,
+      "orden": 6,
+      "nombre": "DIDÁCTICA DE LA LECTURA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22506"
+    },
+    {
+      "semestre": 5,
+      "orden": 7,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22507"
+    },
+    {
+      "semestre": 5,
+      "orden": 8,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22508"
+    },
+    {
+      "semestre": 6,
+      "orden": 1,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "SE22601"
+    },
+    {
+      "semestre": 6,
+      "orden": 2,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22602"
+    },
+    {
+      "semestre": 6,
+      "orden": 3,
+      "nombre": "PRÁCTICA DOCENTE Y PROYECTOS DE MEJORA ESCOLAR Y COMUNITARIA",
+      "creditos": 6.75,
+      "horas_semana": 6.0,
+      "horas_semestre": 108.0,
+      "clave": "SE22603"
+    },
+    {
+      "semestre": 6,
+      "orden": 4,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22604"
+    },
+    {
+      "semestre": 6,
+      "orden": 5,
+      "nombre": "LITERATURA MEXICANA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22605"
+    },
+    {
+      "semestre": 6,
+      "orden": 6,
+      "nombre": "DIDÁCTICA DE LA ESCRITURA",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22606"
+    },
+    {
+      "semestre": 6,
+      "orden": 7,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22607"
+    },
+    {
+      "semestre": 6,
+      "orden": 8,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 4.5,
+      "horas_semana": 4.0,
+      "horas_semestre": 72.0,
+      "clave": "SE22608"
+    },
+    {
+      "semestre": 7,
+      "orden": 1,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 11.25,
+      "horas_semana": 10.0,
+      "horas_semestre": 180.0,
+      "clave": "SE22701"
+    },
+    {
+      "semestre": 7,
+      "orden": 2,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 22.5,
+      "horas_semana": 20.0,
+      "horas_semestre": 360.0,
+      "clave": "SE22702"
+    },
+    {
+      "semestre": 8,
+      "orden": 1,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 11.25,
+      "horas_semana": 10.0,
+      "horas_semestre": 180.0,
+      "clave": "SE22801"
+    },
+    {
+      "semestre": 8,
+      "orden": 2,
+      "nombre": "FLEXIBILIDAD CURRICULAR",
+      "creditos": 22.5,
+      "horas_semana": 20.0,
+      "horas_semestre": 360.0,
+      "clave": "SE22802"
+    }
+  ]
+}

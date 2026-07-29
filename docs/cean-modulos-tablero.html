@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEAN — Módulos (tablero)</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: #191919;
+      color: #e3e3e3;
+      min-height: 100vh;
+      padding: 2rem 1.5rem 3rem;
+    }
+    .breadcrumb {
+      font-size: 0.8rem;
+      color: #9b9b9b;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .breadcrumb svg { opacity: 0.7; }
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.02em;
+    }
+    .toolbar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .toolbar button, .toolbar a {
+      background: #2f2f2f;
+      border: none;
+      color: #c4c4c4;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .toolbar button:hover, .toolbar a:hover { background: #3d3d3d; }
+    .toolbar .reload { background: #2C5EAB; color: #fff; }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(260px, 1fr));
+      gap: 1.25rem;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .board { grid-template-columns: 1fr; }
+    }
+    .column {
+      background: #202020;
+      border-radius: 10px;
+      min-height: 120px;
+      padding: 0.75rem 0.5rem 1rem;
+    }
+    .column-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.5rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .pill-gray { background: #373737; color: #d4d4d4; }
+    .pill-blue { background: #2e4a7a; color: #b8d4f8; }
+    .pill-green { background: #2d4a38; color: #b8e6c8; }
+    .count { color: inherit; opacity: 0.85; }
+    .cards { display: flex; flex-direction: column; gap: 0.5rem; }
+    .card {
+      background: #2a2a2a;
+      border-radius: 8px;
+      padding: 0.65rem 0.75rem;
+      cursor: default;
+      transition: background 0.15s;
+      border: 1px solid transparent;
+    }
+    .card:hover {
+      background: #323232;
+      border-color: #404040;
+    }
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .card-icon {
+      flex-shrink: 0;
+      width: 1.25rem;
+      height: 1.25rem;
+      margin-top: 0.1rem;
+      opacity: 0.55;
+    }
+    .card-title {
+      font-size: 0.875rem;
+      line-height: 1.35;
+      color: #ebebeb;
+    }
+    .card-title strong { color: #59C1E3; font-weight: 600; }
+    .card-meta {
+      margin-top: 0.45rem;
+      padding-left: 1.75rem;
+      font-size: 0.7rem;
+      color: #888;
+      line-height: 1.4;
+    }
+    .card-meta span { display: block; }
+    .tag {
+      display: inline-block;
+      margin-top: 0.35rem;
+      margin-right: 0.25rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.65rem;
+      background: #333;
+      color: #aaa;
+    }
+    .tag.fase { background: #1e3a5f; color: #7eb8e8; }
+    .loading, .error {
+      text-align: center;
+      padding: 3rem;
+      color: #888;
+    }
+    .error { color: #e88; }
+    .legend {
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      color: #666;
+      max-width: 640px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="breadcrumb">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+    CEAN / docs / cean-modulos-notion.csv
+  </div>
+  <h1>Módulos</h1>
+  <div class="toolbar">
+    <a href="cean-modulos-notion.csv" download>Descargar CSV</a>
+    <button type="button" class="reload" id="reload">Actualizar</button>
+  </div>
+  <div id="board" class="board">
+    <p class="loading">Cargando módulos…</p>
+  </div>
+  <p class="legend">
+    Vista tipo tablero Notion. Columna <strong>Estado tablero</strong> del CSV:
+    Sin empezar · En curso · Listo (según diseño + desarrollo).
+    Abre vía <code>/modulos/tablero</code> o sirve la carpeta <code>docs/</code>.
+  </p>
+
+  <script>
+    const COLUMNS = [
+      { id: 'Sin empezar', pill: 'pill-gray', label: 'Sin empezar' },
+      { id: 'En curso', pill: 'pill-blue', label: 'En curso' },
+      { id: 'Listo', pill: 'pill-green', label: 'Listo' },
+    ];
+
+    const DOC_ICON = `<svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`;
+
+    function parseCsvLine(line) {
+      const out = [];
+      let cur = '';
+      let inQ = false;
+      for (let i = 0; i < line.length; i++) {
+        const c = line[i];
+        if (c === '"') {
+          inQ = !inQ;
+          continue;
+        }
+        if (c === ',' && !inQ) {
+          out.push(cur.trim());
+          cur = '';
+          continue;
+        }
+        cur += c;
+      }
+      out.push(cur.trim());
+      return out;
+    }
+
+    function parseCsv(text) {
+      const lines = text.trim().split(/\r?\n/);
+      const headers = parseCsvLine(lines[0]);
+      return lines.slice(1).map(line => {
+        const vals = parseCsvLine(line);
+        const row = {};
+        headers.forEach((h, i) => { row[h] = vals[i] ?? ''; });
+        return row;
+      });
+    }
+
+    function cardTitle(row) {
+      const id = row['ID'] || '—';
+      const mod = row['Módulo'] || '';
+      const sub = row['Submódulo'] || '';
+      if (id !== '—' && id !== '') {
+        return `<strong>${escapeHtml(id)}</strong> · ${escapeHtml(sub)} <span style="color:#777;font-weight:400">(${escapeHtml(mod)})</span>`;
+      }
+      return `${escapeHtml(mod)}: ${escapeHtml(sub)}`;
+    }
+
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function formatDate(d) {
+      if (!d) return '';
+      const [y, m, day] = d.split('-');
+      const months = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+      return `${parseInt(day, 10)} ${months[parseInt(m, 10) - 1]} ${y}`;
+    }
+
+    function renderBoard(rows) {
+      const board = document.getElementById('board');
+      const grouped = Object.fromEntries(COLUMNS.map(c => [c.id, []]));
+      rows.forEach(row => {
+        const status = row['Estado tablero'] || 'Sin empezar';
+        if (grouped[status]) grouped[status].push(row);
+        else grouped['Sin empezar'].push(row);
+      });
+
+      board.innerHTML = COLUMNS.map(col => {
+        const items = grouped[col.id];
+        const cards = items.map(row => `
+          <article class="card" title="${escapeHtml(row['Descripción'] || '')}">
+            <div class="card-top">
+              ${DOC_ICON}
+              <div class="card-title">${cardTitle(row)}</div>
+            </div>
+            <div class="card-meta">
+              <span>${escapeHtml(row['Perfil'])} · ${escapeHtml(row['Prioridad'])}</span>
+              <span>${formatDate(row['Inicio plan'])} → ${formatDate(row['Fin plan'])}</span>
+              <span class="tag fase">${escapeHtml(row['Fase'])}</span>
+              <span class="tag">Diseño: ${escapeHtml(row['Estado Diseño'])}</span>
+              <span class="tag">Dev: ${escapeHtml(row['Estado Desarrollo'])}</span>
+            </div>
+          </article>
+        `).join('');
+
+        return `
+          <section class="column" data-status="${escapeHtml(col.id)}">
+            <header class="column-header">
+              <span class="pill ${col.pill}">${escapeHtml(col.label)} <span class="count">${items.length}</span></span>
+            </header>
+            <div class="cards">${cards || '<p style="padding:0.5rem;color:#555;font-size:0.8rem">Sin tarjetas</p>'}</div>
+          </section>
+        `;
+      }).join('');
+    }
+
+    async function load() {
+      const board = document.getElementById('board');
+      board.innerHTML = '<p class="loading">Cargando módulos…</p>';
+      const urls = [
+        'cean-modulos-notion.csv',
+        '/modulos/tablero.csv',
+      ];
+      let text = null;
+      let lastErr = null;
+      for (const url of urls) {
+        try {
+          const res = await fetch(url);
+          if (res.ok) {
+            text = await res.text();
+            break;
+          }
+        } catch (e) {
+          lastErr = e;
+        }
+      }
+      if (!text) {
+        board.innerHTML = `<p class="error">No se pudo cargar el CSV. Usa <a href="/modulos/tablero" style="color:#59C1E3">/modulos/tablero</a> con el servidor Laravel.</p>`;
+        return;
+      }
+      renderBoard(parseCsv(text));
+    }
+
+    document.getElementById('reload').addEventListener('click', load);
+    load();
+  </script>
+</body>
+</html>

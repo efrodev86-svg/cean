@@ -328,7 +328,7 @@ class AlumnosController extends Controller
     {
         $pestaña = (string) $request->input('tab', 'general');
 
-        return in_array($pestaña, ['general', 'contacto', 'domicilio', 'salud'], true)
+        return in_array($pestaña, ['general', 'academicos', 'contacto', 'domicilio', 'salud'], true)
             ? $pestaña
             : 'general';
     }

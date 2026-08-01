@@ -126,7 +126,14 @@ class AlumnosTest extends TestCase
         $this->actingAs($this->admin())
             ->get(route('admin.alumnos.create', ['ciclo' => $ciclo->id, 'grupo' => $grupo->id]))
             ->assertOk()
-            ->assertSee('Registrar alumno', false);
+            ->assertSee('Registrar alumno', false)
+            ->assertSee('Datos académicos', false);
+
+        $this->actingAs($this->admin())
+            ->get(route('admin.alumnos.edit', ['alumno' => Alumno::query()->whereNotNull('grupo_id')->firstOrFail(), 'tab' => 'academicos']))
+            ->assertOk()
+            ->assertSee('Datos académicos', false)
+            ->assertSee('Grupo escolar', false);
 
         $this->actingAs($this->admin())
             ->post(route('admin.alumnos.store'), [
@@ -164,9 +171,9 @@ class AlumnosTest extends TestCase
                 'estatus' => 'regular',
                 'tipo_ingreso' => 'nuevo',
                 'activo' => '1',
-                'tab' => 'contacto',
+                'tab' => 'academicos',
             ])
-            ->assertRedirect(route('admin.alumnos.edit', ['alumno' => $alumno, 'tab' => 'contacto']))
+            ->assertRedirect(route('admin.alumnos.edit', ['alumno' => $alumno, 'tab' => 'academicos']))
             ->assertSessionHas('success');
 
         $this->assertSame('Prueba Editada', $alumno->fresh()->nombres);

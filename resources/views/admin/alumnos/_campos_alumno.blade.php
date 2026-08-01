@@ -1,14 +1,30 @@
 @php
     $alumno = $alumno ?? null;
     $usuario = $alumno?->user;
-    $pestañas = ['general', 'contacto', 'domicilio', 'salud'];
+    $pestañas = ['general', 'academicos', 'contacto', 'domicilio', 'salud'];
     $pestañaActiva = old('tab', request('tab', 'general'));
     $pestañaActiva = in_array($pestañaActiva, $pestañas, true) ? $pestañaActiva : 'general';
+    $gruposMeta = collect($grupos ?? [])->mapWithKeys(fn ($grupo) => [
+        (string) $grupo->id => [
+            'semestre' => $grupo->semestre,
+            'letra' => $grupo->letra,
+            'licenciatura' => $grupo->licenciatura,
+            'ciclo' => $grupo->relationLoaded('cicloEscolar')
+                ? ($grupo->cicloEscolar?->nombre ?? '')
+                : '',
+        ],
+    ]);
+    $grupoIdInicial = (string) old('grupo_id', $alumno?->grupo_id ?? $grupoSeleccionado ?? '');
 @endphp
 
 <div
     x-data="{
         tab: @js($pestañaActiva),
+        grupoId: @js($grupoIdInicial),
+        gruposMeta: @js($gruposMeta),
+        get grupoInfo() {
+            return this.gruposMeta[String(this.grupoId)] || null;
+        },
         tipoIngreso: @js(old('tipo_ingreso', $alumno?->tipo_ingreso ?? \App\Support\AlumnoTipoIngreso::NUEVO)),
         curp: @js(old('curp', $alumno?->curp ?? '')),
         referenciaPago: @js(old('referencia_pago', $alumno?->referencia_pago ?? '')),
@@ -53,6 +69,7 @@
     <div class="flex flex-wrap gap-2 border-b border-gray-800 pb-3">
         @foreach ([
             'general' => 'General',
+            'academicos' => 'Datos académicos',
             'contacto' => 'Contacto y acceso',
             'domicilio' => 'Domicilio',
             'salud' => 'Salud y laboral',
@@ -69,25 +86,6 @@
     </div>
 
     <div x-show="tab === 'general'" x-cloak class="space-y-4">
-        <div>
-            <label class="admin-form-label" for="grupo_id">Grupo escolar <span class="text-cean-red">*</span></label>
-            <select id="grupo_id" name="grupo_id" class="admin-form-input" required>
-                <option value="">Selecciona un grupo</option>
-                @foreach ($grupos as $grupo)
-                    <option
-                        value="{{ $grupo->id }}"
-                        @selected((string) old('grupo_id', $alumno?->grupo_id ?? $grupoSeleccionado ?? '') === (string) $grupo->id)
-                    >
-                        {{ $grupo->etiqueta() }}
-                        @if ($grupo->relationLoaded('cicloEscolar'))
-                            · {{ $grupo->cicloEscolar->nombre }}
-                        @endif
-                    </option>
-                @endforeach
-            </select>
-            @error('grupo_id')<p class="mt-1.5 text-xs text-cean-red">{{ $message }}</p>@enderror
-        </div>
-
         <div class="grid gap-4 sm:grid-cols-2">
             <div>
                 <label class="admin-form-label" for="curp">CURP <span class="text-cean-red">*</span></label>
@@ -119,17 +117,10 @@
             </div>
         </div>
 
-        <div class="grid gap-4 sm:grid-cols-2">
-            <div>
-                <label class="admin-form-label" for="matricula">Matrícula</label>
-                <input id="matricula" name="matricula" type="text" class="admin-form-input font-mono" value="{{ old('matricula', $alumno?->matricula) }}">
-                @error('matricula')<p class="mt-1.5 text-xs text-cean-red">{{ $message }}</p>@enderror
-            </div>
-            <div>
-                <label class="admin-form-label" for="nss">Número de seguro social</label>
-                <input id="nss" name="nss" type="text" class="admin-form-input font-mono" value="{{ old('nss', $alumno?->nss) }}">
-                @error('nss')<p class="mt-1.5 text-xs text-cean-red">{{ $message }}</p>@enderror
-            </div>
+        <div>
+            <label class="admin-form-label" for="nss">Número de seguro social</label>
+            <input id="nss" name="nss" type="text" class="admin-form-input font-mono" value="{{ old('nss', $alumno?->nss) }}">
+            @error('nss')<p class="mt-1.5 text-xs text-cean-red">{{ $message }}</p>@enderror
         </div>
 
         <div class="grid gap-4 sm:grid-cols-2">
@@ -156,6 +147,57 @@
                 <input id="apellido_materno" name="apellido_materno" type="text" class="admin-form-input" value="{{ old('apellido_materno', $alumno?->apellido_materno) }}">
                 @error('apellido_materno')<p class="mt-1.5 text-xs text-cean-red">{{ $message }}</p>@enderror
             </div>
+        </div>
+    </div>
+
+    <div x-show="tab === 'academicos'" x-cloak class="space-y-4">
+        <div>
+            <label class="admin-form-label" for="grupo_id">Grupo escolar <span class="text-cean-red">*</span></label>
+            <select id="grupo_id" name="grupo_id" class="admin-form-input" x-model="grupoId" required>
+                <option value="">Selecciona un grupo</option>
+                @foreach ($grupos as $grupo)
+                    <option value="{{ $grupo->id }}">
+                        {{ $grupo->etiqueta() }}
+                        @if ($grupo->relationLoaded('cicloEscolar') && $grupo->cicloEscolar)
+                            · {{ $grupo->cicloEscolar->nombre }}
+                        @endif
+                    </option>
+                @endforeach
+            </select>
+            <p class="mt-1.5 text-xs text-gray-500">
+                ¿No aparece el grupo?
+                <a href="{{ route('admin.grupos') }}" class="font-medium text-cean-cyan hover:underline">Ir a Grupos escolares</a>
+            </p>
+            @error('grupo_id')<p class="mt-1.5 text-xs text-cean-red">{{ $message }}</p>@enderror
+        </div>
+
+        <div
+            x-show="grupoInfo"
+            x-cloak
+            class="grid gap-3 rounded-lg border border-gray-800 bg-gray-900/50 p-4 sm:grid-cols-2"
+        >
+            <div>
+                <p class="text-[11px] uppercase tracking-wide text-gray-500">Semestre</p>
+                <p class="mt-0.5 text-sm font-medium text-gray-200" x-text="grupoInfo ? (grupoInfo.semestre + '°') : '—'"></p>
+            </div>
+            <div>
+                <p class="text-[11px] uppercase tracking-wide text-gray-500">Salón</p>
+                <p class="mt-0.5 text-sm font-medium text-gray-200" x-text="grupoInfo?.letra || '—'"></p>
+            </div>
+            <div>
+                <p class="text-[11px] uppercase tracking-wide text-gray-500">Licenciatura</p>
+                <p class="mt-0.5 text-sm font-medium text-gray-200" x-text="grupoInfo?.licenciatura || '—'"></p>
+            </div>
+            <div>
+                <p class="text-[11px] uppercase tracking-wide text-gray-500">Ciclo escolar</p>
+                <p class="mt-0.5 text-sm font-medium text-gray-200" x-text="grupoInfo?.ciclo || '—'"></p>
+            </div>
+        </div>
+
+        <div>
+            <label class="admin-form-label" for="matricula">Matrícula</label>
+            <input id="matricula" name="matricula" type="text" class="admin-form-input font-mono" value="{{ old('matricula', $alumno?->matricula) }}">
+            @error('matricula')<p class="mt-1.5 text-xs text-cean-red">{{ $message }}</p>@enderror
         </div>
 
         <div class="grid gap-4 sm:grid-cols-2">

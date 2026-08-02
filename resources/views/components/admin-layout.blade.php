@@ -1,5 +1,5 @@
 @props([
-    'title' => 'Panel de control',
+    'title' => 'Panel de control ENSQ',
     'breadcrumb' => 'Inicio',
 ])
 

@@ -1,5 +1,5 @@
 @props([
-    'title' => 'Panel de control escolar',
+    'title' => 'Panel de control',
     'breadcrumb' => 'Inicio',
 ])
 

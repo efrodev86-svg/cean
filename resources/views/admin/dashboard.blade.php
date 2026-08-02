@@ -1,4 +1,4 @@
-<x-admin-layout title="Panel de control escolar" breadcrumb="Inicio">
+<x-admin-layout title="Panel de control" breadcrumb="Inicio">
     <div class="admin-panel mx-auto max-w-4xl">
         <div class="flex flex-col items-center justify-center py-8 text-center sm:py-12">
             <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-xl border border-gray-700 bg-gray-800 text-cean-cyan">
